@@ -14,7 +14,7 @@ plugins.splice(
 );
 
 export default {
-  input: `src/index.vue`,
+  input: `src/index.js`,
   watch: {
     include: ["src/**"],
     exclude: "node_modules/**"

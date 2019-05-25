@@ -29,16 +29,17 @@ function getFile(targetDir) {
 }
 
 export default fileArr
+  // replace(/\.ts|\.vue/, ".js")
   .map(file => {
     return {
       input: file,
       output: [
         {
-          file: file.replace(/src/, 'es').replace(/\.ts|\.vue/, ".js"),
+          file: file.replace(/src/, 'es'),
           format: 'es'
         },
         {
-          file: file.replace(/src/, 'lib').replace(/\.ts|\.vue/, ".js"),
+          file: file.replace(/src/, 'lib'),
           format: 'cjs'
         }
       ],
@@ -54,6 +55,6 @@ export default fileArr
         name: 'vcomp',
         format: 'umd'
       },
-      plugins: plugins.concat([uglify()])
+      plugins: plugins/* .concat([uglify()]) */
     }
   ]);

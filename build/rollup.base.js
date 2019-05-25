@@ -4,6 +4,8 @@ import nodeResolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import replace from "rollup-plugin-replace";
 
+const extensions = [".js", ".vue"];
+
 export default {
   plugins: [
     replace({
@@ -11,14 +13,16 @@ export default {
     }),
     vuePlugin(),
     babel({
+      extensions,
       runtimeHelpers: true,
       exclude: "node_modules/**"
     }),
     nodeResolve({
-      jsnext: true
+      jsnext: true,
+      extensions
     }),
     commonjs({
-      extensions: [".js", ".vue"],
+      extensions,
       ignoreGlobal: false
     })
   ],
