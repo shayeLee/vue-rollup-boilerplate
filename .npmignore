@@ -1,0 +1,7 @@
+src/
+build/
+.gitignore
+fileServer.js
+.coveralls.yml
+.travis.yml
+index.html
